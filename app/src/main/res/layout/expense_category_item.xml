@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:layout_marginBottom="16dp">
+
+    <!-- Category Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:layoutDirection="rtl">
+
+        <!-- Category Icon and Name -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/category_color_indicator"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/circle_background"
+                android:backgroundTint="@color/primary_blue"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tv_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مشتريات"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:contentDescription="فئة المصروفات" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_category_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45%"
+            android:textSize="14sp"
+            android:textColor="@color/gray_text"
+            android:contentDescription="نسبة المصروفات" />
+
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progress_category"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:progress="45"
+        android:max="100"
+        android:progressTint="@color/primary_blue"
+        android:progressBackgroundTint="@color/light_gray"
+        android:contentDescription="شريط تقدم نسبة المصروفات" />
+
+</LinearLayout>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:background="@color/white"
+    android:padding="16dp">
+
+
+    <!-- Success Icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_check_circle"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تم دفع الفاتورة بنجاح"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/success_color"
+            android:layout_marginBottom="8dp" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تفاصيل التجويل"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Transfer Details Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:backgroundTint="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Amount -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_background"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المبلغ المحول"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="4dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center"
+                    android:baselineAligned="true">
+
+                    <TextView
+                        android:id="@+id/billAmountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3,340.55"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginEnd="6dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/rs_logo"
+                        android:contentDescription="عملة"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Recipient Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="إلى"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    />
+
+                <TextView
+                    android:id="@+id/companyNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="شركة الكهرباء"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <!-- Account Number -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="رقم الحساب"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    />
+
+                <TextView
+                    android:id="@+id/accountNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1092 8736 1973 1234"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <!-- Purpose -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="الغرض"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    />
+
+                <TextView
+                    android:id="@+id/transferPurposeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="حوالات شخصية"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <!-- Date and Time -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="التاريخ والوقت"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    />
+
+                <TextView
+                    android:id="@+id/dueDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01/08/2025 - 02:30 PM"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <!-- Remaining Balance -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="رصيدك الحالي"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    />
+
+                <TextView
+                    android:id="@+id/remainingBalanceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6,659.45 ريال"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/doneButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="العودة للرئيسية"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/button_primary"
+            />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="سداد فواتير أخرى"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_secondary"
+            android:background="@drawable/outline_button"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/text_secondary" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

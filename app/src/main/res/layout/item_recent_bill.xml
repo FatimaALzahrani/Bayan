@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    android:layoutDirection="rtl"
+    app:cardElevation="4dp"
+    android:background="@color/white"
+    android:foreground="?attr/selectableItemBackground"
+    android:focusable="true"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_electricity"
+            android:background="@drawable/circle_background"
+            android:backgroundTint="@color/accent_color"
+            android:padding="12dp"
+            android:layout_marginEnd="16dp"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/serviceProviderTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الشركة السعودية للكهرباء"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/accountNumberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="رقم الحساب: 1234567890"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/dueDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تاريخ الاستحقاق: 15/09/2025"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:id="@+id/amountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="245.50 ريال"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/statusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="مستحقة"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/red"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/arrowImageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_arrow_forward"
+            android:layout_marginStart="8dp"
+            app:tint="#666666" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

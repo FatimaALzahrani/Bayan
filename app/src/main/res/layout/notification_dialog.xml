@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notificationSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:padding="16dp">
+
+    <!-- زر إغلاق -->
+    <ImageView
+        android:id="@+id/closeButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/close"
+        android:layout_gravity="end" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="الإشعارات"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="start"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textColor="#000000"/>
+
+    <!-- إشعار 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF3E0"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_transfer"
+            android:backgroundTint="#FFC107"
+            android:background="@drawable/circle"
+            android:padding="6dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:text="تذكير بسداد فاتورة الكهرباء"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="تنتهي فترة السداد بعد ٣ أيام"
+                android:textColor="#FF5722"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:text="منذ ساعتين"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666"/>
+    </LinearLayout>
+
+    <!-- إشعار 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/come"
+            android:background="@drawable/gray_circle"
+            android:padding="6dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:text="تم إيداع الراتب"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="تم إيداع ٥٠٠٠ في حسابك"
+                android:textColor="#757575"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:text="منذ يومين"
+            android:textSize="12sp"
+            android:textColor="#666"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="عرض جميع الإشعارات"
+        android:gravity="center"
+        android:textColor="#1976D2"
+        android:textStyle="bold"
+        android:paddingTop="12dp"/>
+</LinearLayout>

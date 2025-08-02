@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="رجوع"
+            android:focusable="true"
+            android:clickable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="سداد الفواتير"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1B1750"
+            android:contentDescription="صفحة سداد الفواتير" />
+
+        <TextView
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="إضافة"
+            android:textSize="16sp"
+            android:textColor="@color/accent_color"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:contentDescription="إضافة فاتورة جديدة"
+            android:focusable="true"
+            android:clickable="true" />
+    </RelativeLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:id="@+id/contentScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/bottom_navigation"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Bill Types Section -->
+            <TextView
+                android:id="@+id/billTypesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="أنواع الفواتير"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="قسم أنواع الفواتير" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/billTypesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <!-- Recent Bills Section -->
+            <TextView
+                android:id="@+id/recentBillsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الفواتير الأخيرة"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="قسم الفواتير الأخيرة" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentBillsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/bottom_nav_selected"
+        app:itemTextColor="@color/bottom_nav_selected"
+        app:elevation="8dp" />
+</RelativeLayout>

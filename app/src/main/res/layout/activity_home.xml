@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="#FFFFFF"
+    tools:context=".HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:contentDescription="المحتوى الرئيسي للتطبيق">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layoutDirection="ltr"
+            android:padding="16dp"
+            android:contentDescription="الشاشة الرئيسية للبنك الرقمي، اضغط طويلاً للأوامر الصوتية">
+
+            <!-- Header with profile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:id="@+id/notificationIcon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_notifications"
+                        android:contentDescription="أيقونة الإشعارات، انقر لعرض الإشعارات" />
+
+                    <!-- Notification Badge -->
+<!--                    <View-->
+<!--                        android:layout_width="8dp"-->
+<!--                        android:layout_height="8dp"-->
+<!--                        android:layout_gravity="top|end"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:layout_marginEnd="2dp"-->
+<!--                        android:background="@drawable/circle_background"-->
+<!--                        android:backgroundTint="@color/red" />-->
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مرحبا سامي"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="رسالة ترحيب، مرحبا سامي" />
+
+<!--                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:id="@+id/profile_image"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:src="@drawable/profile"-->
+<!--                    android:contentDescription="صورة الملف الشخصي، انقر لعرض الملف الشخصي" />-->
+
+            </LinearLayout>
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                app:cardCornerRadius="16dp"-->
+<!--                app:cardElevation="4dp"-->
+<!--                android:backgroundTint="@color/white">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الرصيد المتاح"
+                            android:textSize="12sp"
+                            android:textColor="@color/gray_text"
+                            android:contentDescription="عنوان: الرصيد المتاح" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/eye"
+                            android:layout_marginStart="8dp"
+                            android:contentDescription="أيقونة عرض الرصيد"
+                            app:tint="@color/primary_blue" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:layoutDirection="rtl"
+                        android:contentDescription="مبلغ الرصيد الحالي">
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 3,340.55 "
+                            android:textSize="32sp"
+                            android:textColor="#1B1750"
+                            android:drawableEnd="@drawable/rs_logo"
+                            android:textStyle="bold"
+                            android:contentDescription="الرصيد المتاح، انقر للاستماع للمبلغ"
+                            android:focusable="true"
+                            android:clickable="true" />
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text=" ريال"-->
+<!--                            android:fontFamily="@font/tajawal_bold"-->
+<!--                            android:textSize="24sp"-->
+<!--                            android:textColor="@color/primary_blue"-->
+<!--                            android:layout_marginStart="4dp"-->
+<!--                            android:contentDescription="ريال سعودي" />-->
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="آخر تحديث اليوم 10:30 ص"
+                        android:textSize="12sp"
+                        android:textColor="@color/gray_text"
+                        android:contentDescription="وقت آخر تحديث: اليوم الساعة عشرة وثلاثون صباحاً" />
+
+                </LinearLayout>
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+            <!-- Income and Expenses Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <!-- بطاقة الإيرادات -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical"
+                        android:layoutDirection="rtl"
+                        >
+
+                        <!-- النص -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="إيداعات هذا الشهر"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:gravity="start"
+                            android:contentDescription="عنوان: إيرادات هذا الشهر" />
+
+                        <!-- القيمة -->
+                        <TextView
+                            android:id="@+id/tv_income"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 3,340.55 "
+                            android:textSize="12sp"
+                            android:drawableEnd="@drawable/rs_small"
+                            android:drawableTint="@color/green"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+                            android:contentDescription="إجمالي الإيرادات"
+                            android:focusable="true"
+                            android:clickable="true"
+                            android:paddingStart="8dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- بطاقة المصروفات -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical"
+                        android:layoutDirection="rtl"
+                        >
+
+                        <!-- النص -->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="مصروفات هذا الشهر"
+                            android:textSize="14sp"
+                            android:textColor="@color/black"
+                            android:gravity="start"
+                            android:contentDescription="عنوان: مصروفات هذا الشهر" />
+
+                        <!-- القيمة -->
+                        <TextView
+                            android:id="@+id/tv_expenses"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 3,340.55 "
+                            android:textSize="12sp"
+                            android:drawableEnd="@drawable/rs_small"
+                            android:drawableTint="@color/red"
+                            android:textColor="@color/red"
+                            android:textStyle="bold"
+                            android:contentDescription="إجمالي المصروفات"
+                            android:focusable="true"
+                            android:clickable="true"
+                            android:paddingStart="8dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Quick Actions Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="خيارات سريعة"
+                android:textSize="18sp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Quick Actions Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:id="@+id/quick_transfer_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:padding="16dp"
+                    android:background="@drawable/card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="تحويل سريع، انقر للانتقال لصفحة التحويلات">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_transactions"
+                        app:tint="@color/dark_blue"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="أيقونة تحويل سريع" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تحويل سريع"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_blue" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quick_bill_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="تسديد فاتورة، انقر لفتح صفحة دفع الفواتير">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_transfer"
+                        android:layout_marginBottom="8dp"
+                        app:tint="@color/dark_blue"
+                        android:contentDescription="أيقونة تسديد فاتورة" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تسديد فاتورة"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_blue"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:id="@+id/add_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:background="@drawable/card"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="إضافة مفوض جديد، انقر لإضافة مفوض جديد للحساب">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_add_user"
+                        app:tint="@color/dark_blue"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="أيقونة إضافة مفوض جديد" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="إضافة مفوض جديد"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_blue" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/viewSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="عرض الرصيد، انقر لعرض تفاصيل الرصيد">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/cash"
+                        android:layout_marginBottom="8dp"
+                        android:contentDescription="أيقونة عرض الرصيد"
+                        app:tint="@color/dark_blue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="عرض الرصيد"
+                        android:textSize="14sp"
+                        android:textColor="@color/dark_blue" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Account Statement Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layoutDirection="rtl"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="كشف الحساب"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="يونيو 2025"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_text" />
+
+            </LinearLayout>
+
+            <!-- Transactions RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="قائمة المعاملات المالية الأخيرة، انقر على أي معاملة للاستماع للتفاصيل"
+                tools:listitem="@layout/item_transaction" />
+
+            <!-- Download Statement Button -->
+            <Button
+                android:id="@+id/btn_download_statement"
+                android:layout_width="220dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:text="تحميل كشف الحساب"
+                android:textColor="@color/white"
+                android:background="@drawable/rectangle_1"
+                android:layout_marginBottom="20dp"
+                android:drawableEnd="@drawable/upload"
+                android:contentDescription="تحميل كشف الحساب، انقر لتحميل كشف حسابك" />
+
+            <!-- Expenses Analysis Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تحليل المصروفات"
+                android:textSize="18sp"
+                android:layout_gravity="end"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:backgroundTint="@android:color/white">
+            <!-- Expenses Analysis -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Purchases -->
+                <include layout="@layout/expense_category_item"
+                    android:id="@+id/category_purchases" />
+
+                <!-- Transfers -->
+                <include layout="@layout/expense_category_item"
+                    android:id="@+id/category_transfers" />
+
+                <!-- Bills -->
+                <include layout="@layout/expense_category_item"
+                    android:id="@+id/category_bills" />
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- AI Assistant Message -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                android:backgroundTint="@color/light_blue">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/chart"
+                        android:layout_marginEnd="12dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="هنا يتم كتابة ما يقوله الصوت من التطبيق"
+                        android:textSize="14sp"
+                        android:textColor="@color/primary_blue" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemIconTint="@color/bottom_nav_selected"
+        app:itemTextColor="@color/bottom_nav_selected"
+        app:elevation="8dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
