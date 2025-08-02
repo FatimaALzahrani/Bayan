@@ -102,7 +102,7 @@ To set up and run the Bayan application locally, please follow these steps:
     Click the "Run" button (green triangle icon) in Android Studio to deploy and launch the application on your connected device or emulator.
 
 
-For any inquiries, feedback, or support, please reach out to the development team via [email](mailto:your.email@example.com).
+For any inquiries, feedback, or support, please reach out to the development team via [email](mailto:12fatimah.15@gmail.com).
 
 
 
